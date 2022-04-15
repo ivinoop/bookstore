@@ -1,0 +1,46 @@
+// Books
+
+.books {
+  & header {
+    padding: 1rem;
+    & a {
+      font-size: 1.4rem;
+      color: #000;
+    }
+  }
+  & h1 {
+    font-size: 1.8rem;
+  }
+  .books-list {
+    & .all-books {
+      // margin: 0 auto;
+      // box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      // padding: 2rem;
+      & li {
+        padding: 1rem;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        border-radius: 0.6rem;
+        margin: 1rem;
+        width: 300px;
+        & h3 {
+          font-size: 1.2rem;
+          margin-bottom: 0.4rem;
+        }
+        & p {
+          font-size: 1rem;
+          margin-bottom: 0.4rem;
+        }
+        & h4 {
+          font-size: 1rem;
+          margin-bottom: 1rem;
+        }
+        & a {
+          padding: 0.5rem;
+          font-size: 0.8rem;
+          background-color: teal;
+          color: #fff;
+        }
+      }
+    }
+  }
+}

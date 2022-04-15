@@ -1,0 +1,40 @@
+// Form
+
+header {
+  padding: 1rem;
+  & a {
+    font-size: 1.4rem;
+    color: #000;
+  }
+}
+
+// Hero
+
+.hero {
+  & h2 {
+    font-size: 2rem;
+  }
+}
+
+form {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin: 2rem auto;
+  padding: 2rem;
+  max-width: 600px;
+  border-radius: 0.6rem;
+  & input, & textarea {
+    width: 100%;
+    margin: 1rem 0;
+    padding: 0.6rem;
+    border-radius: 0.6rem;
+    border: 1px solid darkgray;
+    font-family: inherit;
+    font-size: 1rem;
+    outline: none;
+    display: block;
+  }
+  & .primary-btn {
+    width: 200px;
+    margin: 0 auto;
+  }
+}

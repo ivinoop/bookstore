@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Update Comment</title>
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="/style.css">
+  <!-- Icons -->
+  <script src="https://kit.fontawesome.com/b9753e102f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <div class="container flex jsb aic">
+      <div class="flex jcc aic">
+        <a href="/">Bookstore</a>
+        <i class="logo fa fa-solid fa-book-open"></i>
+      </div>
+      <a href="/books/new">
+        <button class="primary-btn">Add Book</button> 
+      </a>
+    </div>
+  </header>
+  <main>
+    <section class="update-comment">
+      <div class="container">
+        <h2>Update Comment</h2>
+        <form action="/comments/<%= comment._id %>" method="POST">
+          <input type="text" name="name" value="<%= comment.name %>">
+          <textarea name="content" rows="3">
+            <%= comment.content %>
+          </textarea>
+          <a href="">
+           <button class="primary-btn add-comment-btn">Update Comment</button>
+          </a>
+        </form>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

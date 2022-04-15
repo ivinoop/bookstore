@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Book</title>
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="/style.css">
+  <!-- Icons -->
+  <script src="https://kit.fontawesome.com/b9753e102f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <div class="container flex jsb aic">
+      <div class="flex jcc aic">
+        <a href="/">Bookstore</a>
+        <i class="logo fa fa-solid fa-book-open"></i>
+      </div>
+    </div>
+  </header>  
+  <main>
+    <!-- Hero -->
+    <div class="hero tac">
+      <h2>Edit Book 📖</h2>
+    </div>
+    <!-- Form -->
+    <div class="container tac">
+      <form action="/books/<%= book._id %>" method="POST">
+        <input type="text" name="title" placeholder="Enter book title" value="<%= book.title %>">
+        <textarea name="description" rows="5" placeholder="Enter book description">
+          <%= book.description %>
+        </textarea>
+        <input type="number" name="price" placeholder="Enter book price" value="<%= book.price %>">
+        <input type="text" name="author" placeholder="Enter book author" value="<%= book.author %>">
+        <input type="submit" value="Update" class="primary-btn">
+      </form>
+    </div>
+  </main>
+</body>
+</html>

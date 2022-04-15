@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Details page</title>
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="/style.css">
+  <!-- Icons -->
+  <script src="https://kit.fontawesome.com/b9753e102f.js" crossorigin="anonymous"></script>
+</head>
+<body class="books">
+  <header>
+    <div class="container flex jsb aic">
+      <div class="flex jcc aic">
+        <a href="/">Bookstore</a>
+        <i class="logo fa fa-solid fa-book-open"></i>
+      </div>
+      <a href="/books/new">
+        <button class="primary-btn">Add Book</button> 
+      </a>
+    </div>
+  </header>
+  <main>
+    <section class="book-details tac">
+      <div class="container">
+        <h2>Book Details</h2>
+        <ul class="book">
+          <li>
+            <h3>Title: <%= book.title %></h3>
+            <p>Brief: <%= book.description %></p>
+            <p>Price: <%= book.price %></p>
+            <h4>Author: <%= book.author %></h4>
+            <p>Book ID: <%= book._id %></p>
+            <a href="/books/<%= book._id %>/edit">
+             <button class="primary-btn">✎ Edit</button>
+            </a>
+            <a href="/books/<%= book._id %>/delete">
+             <button class="btn-red">Delete</button>
+            </a>
+          </li>
+        </ul>
+        <a href="/books" class="primary-btn"> ← Back To All Books</a>
+      </div>
+    </section>
+    <section class="comments section-padding">
+      <div class="container flex jsb aifs">
+        <div class="all-comments tal flex-50">
+          <h3>Comments</h3>
+          <% comments.forEach(comment => { %>
+            <div class="comment-box">
+              <div class="comment-header flex jsb aic">
+                <h4>
+                  <i class="fa fa-solid fa-user"></i>
+                  <%= comment.name %>
+                </h4>
+                <div class="comment-btns flex jcc aic">
+                  <a href="/comments/<%= comment._id %>/edit">
+                    <i class="fa fa-solid fa-pen"></i>
+                  </a>
+                  <a href="/comments/<%= comment._id %>/delete">
+                    <i class="fa fa-solid fa-trash"></i>
+                  </a>
+                </div>
+              </div>
+              <p><%= comment.content %></p>
+            </div>
+          <% }) %>
+        </div>
+        <form action="/books/<%= book._id %>/comments" class="add-comment flex-40" method="POST">
+          <input type="text" name="name" placeholder="your name..">
+          <textarea name="content" rows="3" placeholder="your comment.."></textarea>
+          <a href="">
+           <button class="primary-btn add-comment-btn">Add Comment</button>
+          </a>
+        </form>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

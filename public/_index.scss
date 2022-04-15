@@ -1,0 +1,13 @@
+// Index 
+
+.index {
+  & a {
+    font-size: 1.3rem;
+  }
+  header {
+    & h1 {
+      padding: 2rem 0;
+      font-size: 1.5rem;
+    }
+  }
+}

@@ -1,0 +1,81 @@
+// Book Details
+
+.book-details {
+  & h2 {
+    font-size: 2rem;
+    padding: 2rem 0;
+  }
+  & .book {
+    margin-top: 2rem;
+    & li {
+      padding: 1rem;
+      margin: 2rem 0;
+      border-bottom: 1px solid teal;
+      & h3 {
+        font-size: 1.6rem;
+        margin-bottom: 0.4rem;
+      }
+      & p {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+      }
+      & h4 {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
+
+.comments {
+  & form {
+    margin: 0;
+    padding: 1rem;
+    width: 400px;
+    & textarea {
+      font-family: inherit;
+    }
+    & button {
+      width: 100%;
+    }
+  }
+  & .all-comments {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 1.2rem;
+    border-radius: 0.6rem;
+    & h3 {
+      font-size: 1.5rem;
+      color: teal;
+      font-weight: 600;
+      margin-bottom: 2rem;
+    }
+    & .comment-box {
+      padding: 1rem;
+      background-color: #eeeeee;
+      border-radius: 0.5rem;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      margin: 0.9rem 0;
+      & .comment-header {
+        & .comment-btns {
+          & i {
+            margin: 0 0.6rem;
+          }
+          & .fa-pen {
+            color: #000;
+          }
+          & .fa-trash {
+            color: red;
+          }
+        }
+      }
+      & h4 {
+        color: teal;
+        font-size: 0.9rem;
+        margin-bottom: 0.6rem;
+      }
+      & p {
+        font-size: 0.8rem;
+      }
+    }
+  }
+}
