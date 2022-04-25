@@ -26,14 +26,22 @@ router.post('/', (req, res, next) => {
   })
 })
 
+// router.get('/:id', (req, res, next) => {
+//   let id = req.params.id
+//   Book.findById(id, (err, book) => {
+//     if(err) return next(err)
+//     Comment.find({bookId: id}, (err, comments) => {
+//       if(err) return next(err)
+//       res.render('bookDetails', {book, comments})
+//     })
+//   })
+// })
+
 router.get('/:id', (req, res, next) => {
   let id = req.params.id
-  Book.findById(id, (err, book) => {
+  Book.findById(id).populate('comments').exec((err, book) => {
     if(err) return next(err)
-    Comment.find({bookId: id}, (err, comments) => {
-      if(err) return next(err)
-      res.render('bookDetails', {book, comments})
-    })
+    res.render('bookDetails', {book})
   })
 })
 
@@ -57,7 +65,9 @@ router.get('/:id/delete', (req, res, next) => {
   let id = req.params.id
   Book.findByIdAndDelete(id, (err, book) => {
     if(err) return next(err)
-    res.redirect('/books')
+    Comment.deleteMany({ bookId: book.id}, (err, info) => {
+      res.redirect('/books')
+    })
   })  
 }) 
 

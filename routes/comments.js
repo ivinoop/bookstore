@@ -1,4 +1,5 @@
 const express = require('express')
+const Book = require('../models/book')
 const router = express.Router()
 const Comment = require('../models/comment')
 
@@ -15,8 +16,10 @@ router.get('/:id/delete', (req, res, next) => {
   let id = req.params.id 
   Comment.findByIdAndDelete(id, (err, comment) => {
     if(err) return next(err)
-    res.redirect('/books/' + comment.bookId)
-  })
+    Book.findByIdAndUpdate(comment.bookId, {$pull : {comments: comment.id}}, (err, book) => {
+      res.redirect('/books/' + comment.bookId)
+    })
+  }) 
 })
 
 router.post('/:id', (req, res, next) => {
